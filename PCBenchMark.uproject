@@ -1,0 +1,13 @@
+{
+	"FileVersion": 3,
+	"EngineAssociation": "{AE0D9482-4F2E-C1F8-731A-E48324E120DE}",
+	"Category": "",
+	"Description": "",
+	"Modules": [
+		{
+			"Name": "PCBenchMark",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		}
+	]
+}
