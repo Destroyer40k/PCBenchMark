@@ -16,4 +16,7 @@ class UCutFloat : public  UEdGraphNode
 
 	UFUNCTION(BlueprintPure, meta = (HidePin = "WorldContextObject", DefaultToSelf = "WorldContextObject", FriendlyName = "Cut Float Decimals", CompactNodeTitle = "Math", Keywords = "cut float decimal"), Category = Game)
 	static float CutFloat(float value, uint8 decimals);
+
+	UFUNCTION(BlueprintPure, meta = (HidePin = "WorldContextObject", DefaultToSelf = "WorldContextObject", FriendlyName = "Get Float As String With Precision", CompactNodeTitle = "Math", Keywords = "cut float decimal string"), Category = Game)
+	static FString GetFloatAsStringWithPrecision(float value, uint8 decimals);
 };
