@@ -11,3 +11,29 @@ AScoreCalculator::AScoreCalculator(const class FPostConstructInitializePropertie
 }
 
 
+int32 AScoreCalculator::calculateDemoScore()
+{
+	int32 ret = 0;
+	if (!DemoTestResults)
+		return -1;
+	ret = DemoTestResults->AvgFPS;
+	ret /= DemoTestResults->MinFPS / DemoTestResults->AvgFPS;
+
+	ret *= FMath::Sqrt(DemoTestResults->MaxFPS / DemoTestResults->AvgFPS);
+
+	return ret;
+}
+
+int32 AScoreCalculator::calculatePhysicsScore()
+{
+	int32 ret = 0;
+	if (!PhysicsTestResults)
+		return -1;
+
+	ret = PhysicsTestResults->AvgFPS + float(PhysicsTestResults->BoxCount);
+	ret /= PhysicsTestResults->MinFPS / PhysicsTestResults->AvgFPS;
+
+	ret *= FMath::Sqrt(PhysicsTestResults->MaxFPS / PhysicsTestResults->AvgFPS);
+
+	return ret;
+}

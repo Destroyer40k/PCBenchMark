@@ -24,6 +24,9 @@ class PCBENCHMARK_API UTestResults : public USaveGame
 	float MaxFPS;
 
 	UPROPERTY(BlueprintReadWrite, Category = Basic)
+	float AvgFPS;
+
+	UPROPERTY(BlueprintReadWrite, Category = Basic)
 	float Duration;
 	
 };
