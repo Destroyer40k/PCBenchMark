@@ -17,7 +17,7 @@ int32 AScoreCalculator::calculateDemoScore()
 	if (!DemoTestResults)
 		return -1;
 	ret = DemoTestResults->AvgFPS;
-	ret /= DemoTestResults->MinFPS / DemoTestResults->AvgFPS;
+	ret *= DemoTestResults->MinFPS / DemoTestResults->AvgFPS;
 
 	ret *= FMath::Sqrt(DemoTestResults->MaxFPS / DemoTestResults->AvgFPS);
 
@@ -31,7 +31,7 @@ int32 AScoreCalculator::calculatePhysicsScore()
 		return -1;
 
 	ret = PhysicsTestResults->AvgFPS + float(PhysicsTestResults->BoxCount);
-	ret /= PhysicsTestResults->MinFPS / PhysicsTestResults->AvgFPS;
+	ret *= PhysicsTestResults->MinFPS / PhysicsTestResults->AvgFPS;
 
 	ret *= FMath::Sqrt(PhysicsTestResults->MaxFPS / PhysicsTestResults->AvgFPS);
 
